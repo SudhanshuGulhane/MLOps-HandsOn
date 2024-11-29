@@ -1,0 +1,78 @@
+1. Purpose of Monitoring
+    Goal: Track the health and performance of the machine learning system over time to detect issues early.
+    Tools: Typically done through dashboards that track various metrics.
+
+2. Types of Metrics to Monitor
+    
+    Software Metrics (System Health):
+        Examples: Memory usage, compute resources, latency, throughput, server load.
+        Purpose: Ensure that the software supporting the learning algorithm is running smoothly.
+        Tools: MLOps tools often come with built-in monitoring for software metrics.
+    
+    Input Metrics (Monitoring Data Distribution):
+        Examples:
+            Average input length (e.g., in seconds for speech recognition).
+            Average input volume (to track variations in audio quality).
+            Percentage of missing input values (especially in structured data tasks).
+            Image brightness (in visual inspection tasks) to monitor lighting conditions.
+        Purpose: Detect changes in the input data distribution (X), which could affect model performance.
+        
+    Output Metrics (Monitoring Algorithm Performance):
+        Examples:
+            Null outputs: Monitor how often the system returns "null" (e.g., speech recognition systems that fail to recognize speech).
+            User behavior: Monitor how often a user performs repeated actions (e.g., two quick searches with similar inputs) that 
+            may indicate misrecognition.
+            Switch to alternative input: Track how often users switch from voice input to typing, which could suggest frustration
+            with the system.
+        Purpose: Understand how well the model is performing (e.g., accuracy, misclassifications).
+
+3. Designing Monitoring Dashboards
+    Brainstorming Metrics:
+        Sit down with your team to brainstorm possible issues that could arise and the metrics to detect them.
+        Start with a broad set of metrics and gradually refine them based on what proves useful over time.
+        Example:
+            If you're concerned about server overload from a spike in traffic, monitor server load.
+            If you suspect that user frustration is increasing, track metrics like how often users abandon the speech system
+            or switch to typing.
+
+4. Effective Monitoring Strategy
+    Start Broad, Then Refine: Begin by monitoring a wide range of metrics and gradually remove those that don't provide useful insights.
+    Example Metrics for Speech Recognition:
+        Input Metrics: Track average audio clip length, volume levels, or missing values in audio.
+        Output Metrics: Track null responses, misrecognized queries, or user frustration signals (like switching from speech to typing).
+
+5. Key Considerations:
+    Monitor Both System Health and Performance: It’s not enough to just monitor system resources like memory or server load
+    also focus on whether the model’s output is meeting performance goals.
+    Detecting Data Changes: Input metrics are especially useful for spotting changes in data distribution
+    (e.g., changes in audio input quality or lighting conditions).
+    Detecting Algorithm Issues: Output metrics help identify performance degradation, such as frequent misrecognitions or user abandonment.
+
+===============================================
+Pipeline Monitoring in Machine Learning Systems
+===============================================
+
+1. Machine Learning Pipeline:
+    Example: Speech recognition involves two main steps:
+    Voice Activity Detection (VAD): Detects speech in audio.
+    Speech Recognition: Transcribes detected speech.
+    VAD reduces bandwidth usage by only sending speech segments to the cloud for transcription.
+
+2. Pipeline Challenges:
+    Changes in one part of the pipeline (e.g., VAD or data input) can affect downstream modules, leading to degraded performance.
+    For example, if the VAD’s performance changes (due to a new phone microphone), it can impact the speech recognition system.
+
+3. Monitoring Changes (Concept Drift & Data Drift):
+    Concept Drift: When the relationship between input and output changes.
+    Data Drift: When the distribution of input data changes.
+    Example: Changes in audio quality or user behavior can lead to drift, affecting system performance.
+
+4. Metrics to Monitor:
+    Input Metrics: Track changes in input data (e.g., audio length, volume, missing labels).
+    Output Metrics: Monitor output accuracy (e.g., null transcriptions or incorrect recommendations).
+    Monitor both input and output at each pipeline stage to detect performance degradation.
+
+5. Cascading Effects:
+    Changes in one module can impact others (e.g., if VAD fails, it affects speech recognition or if user data changes,
+    it impacts recommendation systems).
+    Example: A change in user profile accuracy can degrade recommendations, requiring pipeline adjustments.
