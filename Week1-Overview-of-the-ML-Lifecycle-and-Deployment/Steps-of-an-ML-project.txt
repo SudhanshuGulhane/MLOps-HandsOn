@@ -1,0 +1,27 @@
+1. Scoping:
+    a. Define the project goal (what to apply ML to).
+    b. Identify X (features) and Y (target variable).
+
+2. Data Collection:
+    a. Acquire relevant data.
+    b. Define and organize data, ensuring it's properly labeled.
+    c. Establish a baseline for performance.
+
+3. Model Training:
+    a. Select and train the model.
+    b. Perform error analysis to identify model weaknesses.
+    c. Iteratively update the model or collect more data as needed.
+
+4. Error Analysis & Final Check:
+    a. Conduct error analysis to ensure model performance is sufficient.
+    b. Perform a final audit before deployment.
+
+5. Deployment:
+    a. Deploy the model in production.
+    b. Write necessary software for production deployment.
+    c. Monitor live traffic and track system performance.
+
+6. Maintenance & Iteration:
+    a. Monitor for data distribution changes, retrain or update the model if needed.
+    b. Use live data feedback for continuous improvement (error analysis, data updates, model retraining).
+    c. Cycle between deployment, monitoring, and maintenance to refine the system.
