@@ -1,0 +1,46 @@
+1. Deployment Use Cases:
+    New Product or Capability:
+        Deploy a new feature, like speech recognition, that was not previously offered.
+        Gradual Traffic Ramp-up: Start with a small amount of traffic and gradually increase it.
+    
+    Automating or Assisting a Task:
+        Transition from manual tasks (e.g., human inspectors) to automation (e.g., using a learning algorithm).
+        Shadow Mode Deployment: Algorithm runs in parallel with humans, but its decisions are not used initially. 
+        This allows performance comparison and verification before real decision-making.
+    
+    Replacing an Existing System:
+        Replace an older machine learning model with a new, hopefully better, model.
+        Gradual Ramp-up and Monitoring: Begin with a small percentage of traffic, monitor performance, and gradually 
+        increase traffic as the model proves reliable.
+        Rollback Capability: If the new system performs poorly, revert to the previous system.
+
+2. Shadow Mode Deployment:
+    What it is: The machine learning algorithm runs alongside human inspectors (or the previous system), 
+    but its output is not used in decision-making.
+    
+    Purpose: Allows you to gather data on the algorithm’s performance and compare it to human judgments or older models.
+        Example: In smartphone defect inspection:
+        Human inspector says "fine," algorithm agrees.
+        Human says "not okay," algorithm agrees or disagrees.
+    Collect data on performance without affecting decisions.
+
+3. Canary Deployment:
+    What it is: Deploy the new system to a small subset of users or traffic (e.g., 5%) to monitor performance.
+    
+    Purpose: Minimize the impact of mistakes by limiting exposure to only a small percentage of traffic initially.
+    
+    Benefits: Allows for careful monitoring and gradual increase in traffic as the system proves its reliability.
+
+4. Key Deployment Strategies:
+    Gradual Ramp-up: Start small and monitor performance before increasing the amount of traffic.
+
+    Monitoring: Continuously monitor the system to catch any issues early.
+
+    Rollback: Have the ability to revert to the previous system if the new model underperforms.
+
+5. Example - Smartphone Inspection:
+    Human Inspectors vs. ML Algorithm: Transition from humans inspecting defects to using a learning algorithm for automation.
+    
+    Shadow Mode: Initially, the algorithm's output is not used in decision-making but compared to the human inspector’s output.
+    
+    Canary Deployment: Once the algorithm is proven in shadow mode, deploy it to a small subset of traffic to start making real decisions.
