@@ -1,0 +1,42 @@
+We can use the machine learning project life cycle to set through a speech recognition example to get a better idea.
+
+1. Scoping:
+
+    a. Define the project: Choose the application (e.g., speech recognition for voice search).
+    b. Estimate key metrics:
+    c. Accuracy: How accurate is the transcription?
+    d. Latency: How long does it take to transcribe speech?
+    e. Throughput: How many queries per second can the system handle?
+    f. Estimate resources: Time, compute, budget, and timeline for the project.
+
+2. Data Collection:
+
+    a. Define the data: Collect audio data (e.g., speech recordings for voice search).
+    b. Establish a baseline: Initial model performance with the collected data.
+    c. Label and organize data: Transcribe the speech accurately.
+    d. Challenges: Consistency in labeling (e.g., how to transcribe noisy or unclear audio).
+        Example: Transcriptions like "Um today's weather" could be written in different ways, leading to inconsistency.
+        Standardization of transcription conventions is crucial for model training.
+
+3. Data Definition Questions:
+
+    a. Silence handling: How much silence to include before/after the speech (e.g., 100ms, 300ms, 500ms)?
+    b. Volume normalization: How to handle different loudness levels within the same audio clip?
+
+4. Model Training:
+
+    a. Select and train the model: Based on labeled data, choose an appropriate model for speech recognition.
+    b. Error analysis: Evaluate and improve the model's transcription accuracy by identifying weaknesses.
+    c. Iterative process: Refining the model based on performance feedback and data inconsistencies.
+
+5. Deployment:
+
+    a. Deploy in production: Implement the trained speech recognition model in a live system.
+    b. Monitor and maintain: Track performance, handle new speech patterns, and update the model when needed.
+
+5. Maintenance & Iteration:
+
+    Continuous feedback loop: Use real-world data to identify new challenges, retrain the model, and improve performance over time.
+
+The key challenge in speech recognition systems is managing data consistency and ensuring that labeling standards are followed across 
+all collected audio clips. This helps ensure that the model learns effectively from the data.
