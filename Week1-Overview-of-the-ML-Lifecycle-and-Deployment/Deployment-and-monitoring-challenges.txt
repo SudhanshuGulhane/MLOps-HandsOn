@@ -1,0 +1,51 @@
+1. Challenges in Deployment
+    Machine Learning / Statistical Issues
+    Software Engineering Issues
+
+2. Data Drift and Concept Drift
+    Data Drift:
+        When the input distribution (X) changes over time. Example: Changes in lighting conditions affect the accuracy of a model
+        detecting scratches on smartphones.
+    Concept Drift:
+        When the desired output mapping (from X to Y) changes over time. Example: A change in purchasing behavior during the 
+        COVID-19 pandemic affects fraud detection models.
+
+3. Examples from Speech Recognition
+    Data Sources:
+        Purchased/licensed data: Audio and transcripts.
+        Historical user data: User interactions with the system.
+    Impact of Data Drift:
+        If new user data or speech patterns emerge (e.g., new smartphone models with different microphones), the performance 
+        of speech recognition models can degrade.
+        Continuous data changes can lead to the need for frequent model updates to maintain accuracy.
+
+4. Handling Data Changes
+    Dev and Test Sets:
+        Evaluate the model on recent data (e.g., the last few months) to ensure it adapts to changes in the data distribution.
+    
+    Monitoring for Data Drift:
+        After deployment, it’s crucial to monitor the system for data changes (e.g., new vocabulary or speech patterns)
+        and update the model accordingly.
+    
+    Gradual vs. Sudden Changes: 
+        Gradual Change: Slow evolution of data, like the introduction of new vocabulary in a language.
+        Sudden Shock: Rapid changes in data, such as during the COVID-19 pandemic, when consumer behaviors shifted significantly.
+
+5. Terminology:
+    Data Drift:
+        Changes in the input data distribution (e.g., new trends, new products).
+    Concept Drift:
+        Changes in the relationship between input and output (e.g., new behaviors that change how the model should interpret data).
+
+6. Impact on Model Performance:
+    Data Drift:
+        Can lead to the need for retraining the model on new data that reflects the current distribution.
+    Concept Drift:
+        May require adjustments in the model’s understanding or logic to account for the changing 
+        relationship between inputs and outputs.
+
+7. Dealing with Data and Concept Drift:
+    Regular monitoring and retraining are key to maintaining model accuracy over time.
+    Understanding whether the changes are gradual or sudden will help decide whether frequent updates are needed.
+    By recognizing and addressing data drift and concept drift, you can ensure that your deployed machine learning models
+    continue to perform well even as real-world conditions change.
