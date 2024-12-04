@@ -1,0 +1,70 @@
+Key Points: Challenges in Production Machine Learning Projects
+
+1. Performance on Critical Examples:
+
+    Average test set accuracy weights all examples equally, but some are disproportionately important
+    (e.g., navigational queries in web search).
+    Solutions like reweighting examples may help but are not always sufficient.
+
+2. Fairness and Key Slices:
+
+    Machine learning systems must avoid bias, especially in sensitive applications like loan approvals 
+    or e-commerce recommendations.
+    Ensure fair treatment across attributes (e.g., ethnicity, gender) and categories (e.g., product types, retailers).
+
+3. Rare Classes and Skewed Distributions:
+
+    Imbalanced datasets can lead to misleading accuracy (e.g., predicting "no disease" in 99% negative data).
+    Rare conditions (e.g., hernia diagnosis) may be overlooked despite high average accuracy.
+
+4. Common Pitfall:
+
+    Achieving high test set accuracy does not guarantee real-world applicability. 
+    Algorithms must perform well on business-critical cases and rare classes.
+
+5. Actionable Steps:
+
+    Analyze key slices of data to identify performance issues.
+    Evaluate and improve performance on rare classes and disproportionately important examples.
+    Adapt systems to meet application-specific requirements beyond test set accuracy.
+
+Establishing a Baseline for Machine Learning Projects
+
+1. Importance of a Baseline:
+
+    Establishing a baseline is critical for evaluating progress and determining where to focus efforts.
+    It helps identify the irreducible error or Bayes error (e.g., limitations of the data).
+
+2. Human-Level Performance (HLP):
+
+    Unstructured Data (images, audio, text): Humans excel, making HLP a good baseline.
+    Structured Data (spreadsheets, databases): Humans are not as proficient, so HLP is less useful.
+
+3. Methods to Establish a Baseline:
+
+    Human-Level Performance: Use human annotations for unstructured data to understand the upper limit of accuracy.
+    Literature Review: Research state-of-the-art performance or open-source benchmarks.
+    Quick-and-Dirty Implementation: Develop a basic model to get a preliminary understanding of achievable results.
+    Existing System Performance: If a previous system exists, use its metrics as the baseline.
+
+4. Example: Speech Recognition:
+
+    Categories: Clear Speech, Car Noise, People Noise, Low Bandwidth.
+    Analysis:
+        Low Bandwidth: Limited improvement potential as HLP is already low (~70%).
+        Focus on Car Noise: Significant room for improvement (4% gap to HLP).
+
+5. Prioritization with Baseline:
+
+    Compare model performance to baseline (HLP or existing benchmarks).
+    Use baseline to decide areas to prioritize for improvement.
+
+6. Challenges Without a Baseline:
+
+    Unrealistic expectations (e.g., 99% accuracy demands without exploration).
+    Difficulties in setting achievable goals.
+
+7. Best Practices:
+
+    Take time to establish a baseline before making commitments.
+    Explain the importance of baseline performance to stakeholders.
