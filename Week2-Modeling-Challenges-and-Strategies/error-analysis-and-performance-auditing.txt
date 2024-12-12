@@ -1,0 +1,78 @@
+A] Purpose of Error Tagging:
+- Initial Review:
+    Analyze mislabeled examples and hypothesize potential error categories (e.g., "car noise," "people noise").
+
+- Create Tags:
+    Use a spreadsheet to annotate examples with relevant tags (e.g., car noise, low bandwidth).
+    Add new tags iteratively as new error patterns are identified.
+
+- Iterative Refinement:
+    Revisit examples with new tags and refine the categorization.
+
+Key Metrics for Analysis
+    - Fraction of Errors with a Tag:
+        Measures how common the issue is among errors (e.g., 12% of errors have "car noise").
+
+    - Misclassification Rate for a Tag:
+    T   Tracks the accuracy for data with a specific tag (e.g., 18% misclassified with "car noise").
+    
+    - Fraction of Total Data with a Tag:
+        Indicates how prevalent the issue is across the dataset.
+
+    - Room for Improvement:
+        Compare human performance to assess potential model gains for each tag.
+
+Emerging Tools:
+    MLOps platforms like LandingLens, EvidentlyAI streamline tagging and analysis.
+
+
+B] Prioritizing Improvements in Machine Learning:
+
+Key Factors to Consider:
+
+    Room for Improvement: Difference between current accuracy and human-level performance (HLP).
+
+    Frequency of Data: How much of the dataset belongs to the category.
+
+    Ease of Improvement: Availability of ideas or techniques (e.g., data augmentation).
+
+    Importance of the Category: Critical use cases or business impact.
+
+Example: Speech Recognition
+Tags: Clean speech, car noise, people noise, low bandwidth.
+Analysis:
+Calculate potential accuracy improvement:
+Improvement = (Accuracy Gap) × (Category Frequency).
+Focus on categories with higher overall impact.
+For instance:
+Clean speech: 0.6% potential improvement.
+Car noise: 0.16% potential improvement.
+People noise: 0.6% potential improvement.
+Prioritize clean speech or people noise for maximum gain.
+
+Focused Data Collection
+    Target categories with significant room for improvement and frequency.
+    Collect or augment data specifically for those categories.
+        Example: For car noise, collect more audio clips recorded in cars or simulate car noise using data augmentation.
+
+Efficient Use of Resources
+    Avoid spending time on low-frequency categories (e.g., low bandwidth audio) unless critical for business needs.
+    Focus efforts on high-impact tags identified through analysis.
+
+C] Performance Auditing a Learning Algorithm
+
+Before deploying a learning algorithm:
+    Brainstorm ways the system might fail (e.g., bias, performance on subgroups).
+    Establish metrics to assess these issues on relevant data slices (e.g., accuracy by gender).
+    Get buy-in from stakeholders on these metrics and potential problems.
+    Fix issues before deployment to avoid post-deployment problems.
+
+Example: Speech Recognition
+    Brainstorm: Accuracy on different genders, accents, devices, offensive words.
+    Metrics: Mean accuracy by group, check for offensive words in output.
+
+General Tips:
+
+    Standards for fairness and bias are evolving - stay informed in your industry.
+    Use a team or external advisors for brainstorming to avoid blind spots.
+    Proactive identification and mitigation of problems leads to higher confidence in deployment.
