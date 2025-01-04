@@ -4,3 +4,4 @@ images_with_boxes/
 histories/
 models/
 cats_dogs_birds.tar.gz
+__pycache__
